@@ -1,0 +1,51 @@
+*{
+    border: none;padding: none;
+    box-sizing: border-box;
+}
+body {
+    padding: 10px 20px;
+}
+h1 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 61px;
+}
+h1, h2 {
+    font-family: "Edu AU VIC WA NT Hand", serif;
+    text-transform: capitalize;
+
+    & span {
+        font-size: 60px;
+    }
+}
+p {
+    font-family: "Roboto", serif;
+    line-height: 30px;
+    font-weight: 400;
+}
+.ad {
+    height: 200px;
+    width: 50%;
+    margin: 20px auto;
+    background-image: url(./images.png);
+    background-size: 100%;
+    background-position: cover;
+    padding: 10px;
+
+    &.ad2 {
+        background-image: url(./images2.jpg);
+    }
+    
+}
+a{
+    font-size: 35px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    & h4 {
+        background-color: #0000007a;
+        text-align: center;
+        padding: 20px;
+
+    }
+}
