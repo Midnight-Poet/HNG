@@ -12,17 +12,18 @@ let body = document.querySelector('.body')
 let score = document.querySelector('h3')
 let txt = document.querySelector('.h1')
 let div = document.querySelector('.hey')
-let next = document.querySelector('.nxt')
+// let next = document.querySelector('.nxt')
 let reset = document.querySelector('.reset')
 
 let x = 0
-
+let random
 let btnArray = []
-let random = Math.floor(Math.random() * colorSet[0].length)
 
 
 let func = () => {
+    
     for (let i = 0; i < btn.children.length; i++) {
+        random = Math.floor(Math.random() * colorSet[0].length)
         btnArray.push(btn.children[i])
         btn.children[i].style.backgroundColor = colorSet[x][i]
         body.style.backgroundColor = colorSet[x][random]
@@ -36,15 +37,16 @@ let y = 0
 btnArray.forEach(btn => {
     btn.addEventListener('click', () => {
         
+        func()    
         txt.className += ' pop'
         div.className += ' anime'
         console.log(div.className);
-        
-
         setTimeout(() => {
             txt.className = 'h1'
             div.className = 'hey'
-        }, 2000);
+        }, 3000);
+        
+
 
         if (btn.style.backgroundColor == body.style.backgroundColor) {
             txt.innerText = 'Congratulations! You got it Right!'
@@ -58,20 +60,11 @@ btnArray.forEach(btn => {
         if (x > colorSet.length - 1) {
             x = 0
         }
-        setTimeout(() => {
-            func()            
-        }, 2000);
         
     })
 })
 
-next.addEventListener('click', () => {
-    
-})
 reset.addEventListener('click', () => {
     y = 0
     score.innerText = y
-    txt.innerText = `
-        Amongst the six colors below, Which of them is the color above?
-        Click on the color once U've made up your mind!`
 })
